@@ -72,4 +72,20 @@ if let firstKey = myDictionary["k"] {
     print("no value")
 }
 
+for _ in 0...5 {
+    print("hello")
+}
 
+for someVar in (1...6).reversed() {
+    print(someVar)
+}
+
+var array = ["New York", "New Jersey", "Montana"]
+
+for state in array {
+    print(state)
+}
+
+for arrIndex in 0...array.count-1 {
+    print("\(arrIndex) is \(array[arrIndex])")
+}
