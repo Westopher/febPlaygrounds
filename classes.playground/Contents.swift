@@ -19,12 +19,12 @@ class Bear: Mammal {
     var furColor = ""
     
     func hibernate() {
-        var run: Bool = false
-        print("hibernating / \(run)")
+        print("hibernating")
     }
     
     override func eat() {
-        print("eating fish")
+        var fish = "salmon"
+        print("eating \(fish)!!")
     }
 }
 
@@ -37,15 +37,17 @@ class PolarBear: Bear {
     override init() {
         super.init()
         furColor = "white"
-        var run = true
-        print("\(furColor) / \(run)")
     }
     
     override func eat() {
         super.eat()
-        print("eat seals!")
+        var fish = "whale"
+        print("eat \(fish)!")
+        
     }
 }
 
 let anotherBear = PolarBear()
 anotherBear.hibernate()
+
+anotherBear.eat()
