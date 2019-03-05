@@ -64,4 +64,12 @@ if let myString = words {
 }
 
 
+var myDictionary = ["key":"value", "k":"v", "ke":"va", "y":"ue"]
+
+if let firstKey = myDictionary["k"] {
+    print(firstKey)
+} else {
+    print("no value")
+}
+
 
