@@ -7,7 +7,9 @@ class Mammal {
     }
     func eat() {
         print("eating")
-    } }
+    }
+}
+
 let someMammal = Mammal()
 someMammal.eat()
 someMammal.sleep()
@@ -17,7 +19,8 @@ class Bear: Mammal {
     var furColor = ""
     
     func hibernate() {
-        print("hibernating")
+        var run: Bool = false
+        print("hibernating / \(run)")
     }
     
     override func eat() {
@@ -27,13 +30,15 @@ class Bear: Mammal {
 
 let aBear = Bear()
 aBear.eat()
+print(aBear.hibernate())
 
 //override init is how to change properties, whereas override func is how you change functions.
-
 class PolarBear: Bear {
     override init() {
         super.init()
         furColor = "white"
+        var run = true
+        print("\(furColor) / \(run)")
     }
     
     override func eat() {
@@ -43,5 +48,4 @@ class PolarBear: Bear {
 }
 
 let anotherBear = PolarBear()
-anotherBear.furColor
-anotherBear.eat()
+anotherBear.hibernate()
