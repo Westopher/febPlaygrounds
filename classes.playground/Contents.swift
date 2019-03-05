@@ -53,5 +53,15 @@ anotherBear.hibernate()
 anotherBear.eat()
 
 
+//optional binding
+
+var words:String?
+
+if let myString = words {
+    print(myString)
+} else {
+    print("no string")
+}
+
 
 
