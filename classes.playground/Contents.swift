@@ -106,3 +106,24 @@ let freezingPointOfWater = Celsius(fromKelvin: 273.15)
 // freezingPointOfWater.temperatureInCelsius is 0.0
 print(boilingPointOfWater)
 print(freezingPointOfWater)
+
+
+class Food {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    convenience init() {
+        self.init(name: "Nada")
+    }
+}
+
+let namedMeat = Food(name: "Bacon")
+// namedMeat's name is "Bacon"
+
+let mysteryMeat = Food()
+// mysteryMeat's name is "[Unnamed]"
+
+print(namedMeat)
+print(mysteryMeat)
+
