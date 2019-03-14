@@ -127,3 +127,56 @@ let mysteryMeat = Food()
 print(namedMeat)
 print(mysteryMeat)
 
+
+class Mammal {
+    var name = "A Mammal"
+    var canFly: Bool?
+    var age: Int!
+    var weight: Int
+    
+    init() {
+        weight = 100
+    }
+    
+    init(withName: String, flies: Bool, withAge: Int, withWeight: Int) {
+        name = withName
+        canFly = flies
+        age = withAge
+        weight = withWeight
+    }
+}
+
+var a = Mammal().name
+print(a)
+
+var b = Mammal(withName: "Person", flies: false, withAge: 33, withWeight: 167)
+print(b)
+
+class Person: Mammal {
+    var canMakeSandwich: Bool
+    
+    init(withSandwich: Bool) {
+        canMakeSandwich = true
+        super.init()
+        makeSandwich()
+    }
+    
+    init(canPrepareFood:Bool) {
+        canMakeSandwich = canPrepareFood
+        super.init()
+        makeSandwich()
+    }
+    
+    func makeSandwich() {
+        if canMakeSandwich == true {
+            print("made")
+        } else {
+            print("not made")
+        }
+    }
+}
+
+
+
+
+
