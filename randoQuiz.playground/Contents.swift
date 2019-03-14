@@ -146,11 +146,27 @@ let test = Square(sideLength: 5.2, name: "my test square")
 test.area()
 test.simpleDescription()
 
+
+//Make another subclass of NamedShape called Circle that takes a radius and a name as arguments to its initializer. Implement an area() and a simpleDescription() method on the Circle class.
+
 class Circle: NamedShape {
-    var raidus: Double = 0
+    var radius: Double = 0
     
     init(radius: Double, name: String) {
-        self.raidus = radius
+        self.radius = radius
         super.init(name:name)
     }
+    
+    //you only have to override functions from the super class. This only inherits from Namedshape, not square, so you don't have to override area.
+    func area() -> Double {
+        return .pi * (radius * radius)
+    }
+    
+    override func simpleDescription() -> String {
+        return "This is the radius of a circle: \(radius)"
+    }
 }
+
+var circleVar = Circle(radius: 5, name: "circle")
+circleVar.simpleDescription()
+circleVar.area()
