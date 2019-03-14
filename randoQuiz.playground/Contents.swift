@@ -97,3 +97,60 @@ func greet(_ person: String, _ lunchSpecial: String) -> String {
     return "Hey, \(person), this is the lunch special \(lunchSpecial)"
 }
 print(greet("west", "carrots"))
+
+
+var numbers = [20, 19, 7, 12]
+numbers.map(
+    { (number: Int) -> Int in
+    var result = 0
+    if number % 2 == 0 {
+        result = 3 * number
+    }
+    print(result)
+    return result
+}
+)
+
+
+class NamedShape {
+    var numberOfSides: Int = 0
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+
+class Square: NamedShape {
+    var sideLength: Double
+    
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+    }
+    
+    func area() -> Double {
+        return sideLength * sideLength
+    }
+    
+    override func simpleDescription() -> String {
+        return "A square with sides of length \(sideLength)."
+    }
+}
+let test = Square(sideLength: 5.2, name: "my test square")
+test.area()
+test.simpleDescription()
+
+class Circle: NamedShape {
+    var raidus: Double = 0
+    
+    init(radius: Double, name: String) {
+        self.raidus = radius
+        super.init(name:name)
+    }
+}
