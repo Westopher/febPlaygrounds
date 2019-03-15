@@ -192,3 +192,24 @@ stepCounter.totalSteps = 50
 
 stepCounter.totalSteps
 
+//what this init does is say: hey, i'm gonna declare this when i make an instance, for now just chill.
+class Person {
+    let name: String
+      
+    init(name: String) {
+        self.name = name
+    }
+}
+
+
+class Student: Person {
+    var favoriteSubject: String
+      
+    init(name: String, favoriteSubject: String) {
+        self.favoriteSubject = favoriteSubject
+        //says that the superclass has already init'd this, so it's cool
+        super.init(name: name)
+    }
+}
+
+Excerpt From: Apple Education. “App Development with Swift.” Apple Inc. - Education, 2017. Apple Books. https://itunes.apple.com/us/book/app-development-with-swift/id1219117996?mt=11
