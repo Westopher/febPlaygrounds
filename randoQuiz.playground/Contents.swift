@@ -153,8 +153,8 @@ class Circle: NamedShape {
     var radius: Double = 0
     
     init(radius: Double, name: String) {
-        self.radius = radius
         super.init(name:name)
+        self.radius = radius
     }
     
     //you only have to override functions from the super class. This only inherits from Namedshape, not square, so you don't have to override area.
@@ -170,3 +170,25 @@ class Circle: NamedShape {
 var circleVar = Circle(radius: 5, name: "circle")
 circleVar.simpleDescription()
 circleVar.area()
+
+
+struct StepCounter {
+    var totalSteps: Int = 0 {
+        willSet {
+            print("about to set \(totalSteps) to \(newValue)")
+        }
+        didSet {
+            if totalSteps > oldValue {
+            print("Added \(totalSteps - oldValue) steps")
+        }
+    }
+}
+}
+
+var stepCounter = StepCounter()
+stepCounter.totalSteps = 100
+stepCounter.totalSteps = 500
+stepCounter.totalSteps = 50
+
+stepCounter.totalSteps
+
