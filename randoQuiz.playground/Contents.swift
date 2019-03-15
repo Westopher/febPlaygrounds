@@ -211,5 +211,3 @@ class Student: Person {
         super.init(name: name)
     }
 }
-
-Excerpt From: Apple Education. “App Development with Swift.” Apple Inc. - Education, 2017. Apple Books. https://itunes.apple.com/us/book/app-development-with-swift/id1219117996?mt=11
