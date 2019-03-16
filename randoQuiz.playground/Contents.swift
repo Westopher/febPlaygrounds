@@ -211,3 +211,9 @@ class Student: Person {
         super.init(name: name)
     }
 }
+
+var myDictionary = [String: Int]()
+ 
+var myDict = Dictionary<String, Int>()
+ 
+var myAry: [String: Int] = [:]
