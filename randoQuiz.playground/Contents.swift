@@ -263,3 +263,14 @@ if let toddler = possibleToddler {
 } else {
     print("The age you specified for the toddler is not between 1 and 3 yrs of age")
 }
+
+//working with guard
+func calculateresult(a: Int?, b: Int?, c: Int?) -> Int {
+    guard let aValue = a else {return 0}
+    guard let bValue = b else {return aValue}
+    guard let cValue = c else {return bValue}
+    
+    return aValue + bValue + cValue
+}
+
+calculateresult(a: 4, b: 8, c: nil)
