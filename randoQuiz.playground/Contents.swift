@@ -204,7 +204,7 @@ class Person {
 
 class Student: Person {
     var favoriteSubject: String
-      
+    
     init(name: String, favoriteSubject: String) {
         self.favoriteSubject = favoriteSubject
         //says that the superclass has already init'd this, so it's cool
@@ -213,7 +213,30 @@ class Student: Person {
 }
 
 var myDictionary = [String: Int]()
- 
+
 var myDict = Dictionary<String, Int>()
- 
+
 var myAry: [String: Int] = [:]
+
+
+//optional binding
+    struct Book {
+        var name: String
+        var publicationYear: Int?
+    }
+
+    let firstHarryPotter = Book(name: "Harry Potter and the Sorcerer's Stone", publicationYear: 1997)
+    let secondHarryPotter = Book(name: "Harry Potter and the Chamber of Secrets", publicationYear: 1998)
+    let thirdHarryPotter = Book(name: "Harry Potter and the Prisoner of Azkaban", publicationYear: 1999)
+
+    let books = [firstHarryPotter, secondHarryPotter,
+             thirdHarryPotter]
+
+    let unannouncedBook = Book(name: "Rebels and Lions", publicationYear: nil)
+
+    if let unwrappedPublicationYear = unannouncedBook.publicationYear {
+        print("The book was published in \(unwrappedPublicationYear)")
+    }
+    else {
+        print("The book does not have an official publication date.")
+}
