@@ -232,11 +232,34 @@ var myAry: [String: Int] = [:]
     let books = [firstHarryPotter, secondHarryPotter,
              thirdHarryPotter]
 
-    let unannouncedBook = Book(name: "Rebels and Lions", publicationYear: nil)
+    let unannouncedBook = Book(name: "Rebels and Lions", publicationYear: 2020)
 
     if let unwrappedPublicationYear = unannouncedBook.publicationYear {
         print("The book was published in \(unwrappedPublicationYear)")
     }
     else {
         print("The book does not have an official publication date.")
+}
+
+
+//failable init
+struct Toddler {
+    var name: String
+    var monthsOld: Int
+      
+    init?(name: String, monthsOld: Int) {
+        if monthsOld < 12 || monthsOld > 36 {
+            return nil
+        } else {
+            self.name = name
+            self.monthsOld = monthsOld
+        }
+    }
+}
+
+let possibleToddler = Toddler(name: "Joanna", monthsOld: 37)
+if let toddler = possibleToddler {
+    print("\(toddler.name) is \(toddler.monthsOld) months old")
+} else {
+    print("The age you specified for the toddler is not between 1 and 3 yrs of age")
 }
