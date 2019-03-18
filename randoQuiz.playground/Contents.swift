@@ -274,3 +274,44 @@ func calculateresult(a: Int?, b: Int?, c: Int?) -> Int {
 }
 
 calculateresult(a: 4, b: 8, c: nil)
+
+var name: String?
+name = "west"
+if let x = name, name == "west" && name != nil {
+    print("\(x) works")
+} else {
+    print("doesnt work")
+}
+
+name = "wwwwwwwwwwww"
+func thisStuff() {
+    guard ((name?.lowercased()) != nil), ((name?.characters.count)! > 10) else {
+    print("not lowercased")
+    return
+}
+}
+
+thisStuff()
+
+
+//switching on enums
+enum CompassPoint {
+    case north
+    case east
+    case south
+    case west
+}
+
+let compassHeading: CompassPoint = .west
+
+switch compassHeading {
+case .north:
+    print("I am heading north")
+case .east:
+    print("I am heading east")
+case .south:
+    print("I am heading south")
+case .west:
+    print("I am heading west")
+}
+
